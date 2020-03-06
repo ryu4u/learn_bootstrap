@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_css를 활용한 반응형 웹 코딩</title>
+    <style>
+        * {padding:0;margin:0;}
+        body{
+            background-color: antiquewhite;
+        }
+        #wrapper{
+            border:1px solid gray;
+            width:80%;
+            margin:0 auto;
+            font-size: 2VW; /* 뷰포인트에 따라 폰트크기 자동 변경 */
+        }
+        nav li{
+            list-style: none;  /* 불릿없앰 */
+            float: left;
+            border:1px solid gray;
+            width:20%;
+            box-sizing:border-box; /* width 20%하면 마지막 요소가 아래로 떨어짐 border 1px 때문. -> 박스크기는 border 크기까지 포함함으로 해결 */
+            text-align: center;
+        }
+        nav ul{
+            overflow: hidden; /* folat 쓰게되면 넘치는 현상이 있음. 상위요소에 overflow:hidden 시키면 해결됨 */
+        }
+        header h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header{
+            padding:20px 0 0 0;
+            border:1px solid gray;
+        }
+        .content{
+            padding: 10px;
+        }
+        footer{
+            border:1px solid gray;
+            height:100px;
+            line-height:100px; /* 세로 가운데 정렬을 위함. height에 준 값만큼 설정 */
+            text-align: center;
+        }
+        @media (max-width:767px){
+            body{
+                background-color: purple;
+            }
+            #wrapper{
+                width:100%;
+                font-size: 2em;
+            }
+            nav li{
+                width:100%;
+            }
+        }
+        @media (min-width:768px){
+            body{
+                background-color: orange;
+            }
+            #wrapper{
+                width:100%;
+            }
+        }       
+        @media (min-width:992px){
+            body{
+                background-color: lightblue;
+            }
+            #wrapper{
+                width:80%;
+            }
+        }
+        @media (min-width:1200px){
+            body{
+                background-color: #4bf8b7;
+            }            
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>반응형 웹</h1>
+            <nav>
+                <ul>
+                    <li>menu01</li>
+                    <li>menu02</li>
+                    <li>menu03</li>
+                    <li>menu04</li>
+                    <li>menu05</li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <h2>반응형 웹은 미디어쿼리를 사용하여 스타일링합니다.</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, suscipit ratione et facere iste unde architecto cumque. Quod amet natus vel, repellat velit, suscipit dolor, dicta officiis temporibus consectetur minima.</p>
+        </div>
+        <footer>
+            <h1>designed by ryu</h1>
+        </footer>
+    </div>
+</body>
+</html>
